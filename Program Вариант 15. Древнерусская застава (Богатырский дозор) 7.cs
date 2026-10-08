@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Объявляем массив силы ударов по раундам
+            int[] strikePowerLog = { 28, 35, 22, 40, 33 };
+
+            Console.WriteLine("--- Журнал богатырских ударов ---");
+            for (int i = 0; i < strikePowerLog.Length; i++)
+            {
+                Console.WriteLine($"Раунд {i + 1}: {strikePowerLog[i]} силы удара");
+            }
+
+            // Ручной подсчёт суммарного урона (без LINQ)
+            int totalDamage = 0;
+            for (int i = 0; i < strikePowerLog.Length; i++)
+            {
+                totalDamage += strikePowerLog[i];
+            }
+
+            Console.WriteLine($"\nСуммарный урон за 5 раундов: {totalDamage}");
+
+            Console.ReadKey(); // Чтобы окно консоли не закрылось сразу
+        }
+    }
+}
